@@ -3,7 +3,7 @@ import { imagesDummyData } from '../assets/assets'
 
 const RightSideBar = ({selectedUser}) => {
   return selectedUser && (
-    <div className={`divoneRSB ${selectedUser ? 'checkeddivoneRSB' : ''}`}>
+    <div className={`divoneRSB d-none d-xl-block ${selectedUser ? 'checkeddivoneRSB' : ''}`}>
       <div className='pt-5 d-flex flex-column align-items-center gap-1 fs-5 fw-light text-center mx-auto'>
         <img src={selectedUser?.profilePic || assets.avatar_icon} alt="" className='profilepicRSB rounded-pill'/>
         <h1 className='fs-5 fw-medium px-3 d-flex mx-auto gap-2 align-items-center'>

@@ -28,7 +28,8 @@
     .homefirstdiv {
         display: flex;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
+        height: 100vh;
     }
 
     .homeseconddiv {
@@ -36,6 +37,7 @@
         max-width: 900px;
         height: 90vh;
         border-radius: 1rem;
+        align-items: stretch;
     }
 
     .twocollayout {
@@ -54,10 +56,12 @@
 
 
     .checkdivcc {
-        display: none;
+        display: flex;
     }
 
-
+    .divoneBA{
+        position: absolute;
+    }
 
 
     .divonesidebar {

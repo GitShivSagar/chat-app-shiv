@@ -3,7 +3,7 @@ import assets, { messagesDummyData } from '../assets/assets'
 import formatmsgtime from '../utils/utilities'
 
 
-const ChatContainer = ({selectedUser ,setSelectedUser}) => {
+const ChatContainer = ({selectedUser ,setselectedUser}) => {
 
   const scrollEnd=useRef()
 
@@ -14,7 +14,7 @@ const ChatContainer = ({selectedUser ,setSelectedUser}) => {
   },[])
 
   return selectedUser ? (
-    <div className='divonecc position-relative'>
+    <div className={`divonecc position-relative ${!selectedUser ? 'd-none d-md-flex' : ''}`}>
       {/* <---------- Header ---------> */}
      <div className='d-flex align-items-center py-3 mx-4 border-bottom border-secondary gap-3'>
     <img src={assets.profile_martin} alt='profilePic' className='rounded-pill userimgcc'/>
@@ -22,7 +22,7 @@ const ChatContainer = ({selectedUser ,setSelectedUser}) => {
       Martin Johnson
       <span className='rounded-pill usernamespancc'></span>
       </p>
-      <img onClick={()=> setSelectedUser(null)} src={assets.arrow_icon} alt="" className='arrowiconcc d-block d-md-none '/>
+      <img onClick={()=> setselectedUser(null)} src={assets.arrow_icon} alt="" className='arrowiconcc d-block d-md-none '/>
       <img src={assets.help_icon} alt="" className='helpiconcc d-none d-md-block '/>
       </div>
       {/* ---------- Chat-Container-------- */}
