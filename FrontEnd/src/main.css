@@ -1,0 +1,97 @@
+@media (min-width:575.98px) {
+    .homediv {
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .divoneLP {
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .divsevensidebar {
+        font-size: 0.875rem;
+    }
+
+    .divtwoPP {
+        flex-direction: column-reverse;
+    }
+
+    .logoiconPP {
+        margin-top: 10px;
+    }
+}
+
+@media(min-width:768px) {
+    .homefirstdiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homeseconddiv {
+        display: grid;
+        max-width: 900px;
+        height: 90vh;
+        border-radius: 1rem;
+    }
+
+    .twocollayout {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+
+    .threecollayout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+    }
+
+    .ChatContainer {
+        display: block;
+    }
+
+
+    .checkdivcc {
+        display: none;
+    }
+
+
+
+
+    .divonesidebar {
+        display: block;
+    }
+
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media(min-width:1200px) {
+    .threecollayout {
+        grid-template-columns: 280px 1.6fr 230px;
+    }
+
+    /* .RightSideBar {
+        display: block;
+    } */
+}
+
+
+@media(max-width:767.98px) {
+    /* .ChatContainer {
+        display: none;
+    } */
+
+    /* .show-chat .ChatContainer {
+        display: block;
+    }
+
+    .show-chat .divonesidebar {
+        display: none;
+    } */
+
+}

@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    font-family: "Outfit", sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.appdiv {
+    background-image: url(./assets/bgImage.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.homefirstdiv {
+    min-height: 100vh;
+    /* width: 100%; */
+    display: block;
+  
+    border: none;
+}
+
+.homeseconddiv {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    /* display: grid; */
+    display: block;
+    /* grid-template-columns: 1fr; */
+    max-width: 100%;
+    width: 100%;
+    /* width: 900px; */
+    min-height: 80vh;
+    height: 100%;
+
+}
+
+.twocollayout,
+.threecollayout {
+    /* display: grid; */
+    display: block;
+    /* grid-template-columns: 1fr; */
+}
+
+
+
+.logoimg {
+    max-width: 10rem;
+}
+
+.menuimg {
+    cursor: pointer;
+    max-height: 1.25rem;
+}
+
+.editprofile {
+    cursor: pointer;
+    font-size: small;
+}
+
+.logout {
+    cursor: pointer;
+    font-size: small;
+}
+
+.divonesidebar,
+.ChatContainer,
+.RightSideBar {
+    padding: 1.25rem;
+    /* height: 100%;
+    overflow-y: auto; */
+}
+
+.ChatContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.divonesidebar {
+    color: white;
+    overflow-y: scroll;
+    height: 100%;
+    /* width: 300px; */
+    background-color: rgba(129, 130, 133, 0.1);
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    /* it replace rounded-r-xl tailwind class */
+}
+
+.divfoursidebar:hover .divfivesidebar {
+    display: block;
+}
+
+.divtwosidebar {
+    margin-bottom: 10px;
+}
+
+.divfivesidebar {
+    top: 100%;
+    width: 8rem;
+    z-index: 20;
+    background-color: #282142;
+    color: #f3f4f6;
+    display: none;
+}
+
+.searchdivsidebar {
+    border: 1px solid #282142;
+    border-style: outset;
+}
+
+.searchimgsidebar {
+    width: 0.75rem;
+    margin-left: 6px;
+}
+
+.searchinputsidebar {
+    background: transparent;
+    flex: 1 1 0%;
+    font-size: x-small;
+    color: white;
+    border-width: 0;
+    margin-left: 5px;
+}
+
+.searchinputsidebar::placeholder {
+    color: #c8c8c8;
+    opacity: 1;
+
+}
+
+.searchinputsidebar::-webkit-input-placeholder {
+    color: #c8c8c8;
+}
+
+.divsixsidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.divsevensidebar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.divsevencheck {
+    background-color: #282142/50;
+}
+
+.userimg {
+    width: 25px;
+    aspect-ratio: 1/1;
+}
+
+.usernamediv {
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+}
+
+.usernamediv p {
+    margin: 0;
+    padding: 0;
+}
+
+.online {
+    color: #2bb167;
+    font-weight: 400;
+    font-size: x-small;
+}
+
+.offline {
+    color: #7c8480;
+    font-weight: 400;
+    font-size: x-small;
+}
+
+.afternameindex {
+    position: absolute;
+    font-size: x-small;
+    width: 1.25rem;
+    height: 1.25rem;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(139, 92, 246, 0.5);
+    ;
+}
+
+.divonecc {
+    height: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.userimgcc {
+    width: 35px;
+}
+
+.usernameparacc {
+    font-size: large;
+    color: white;
+}
+
+.usernamespancc {
+    width: .5rem;
+    height: .5rem;
+    background-color: green;
+    font-weight: 500;
+}
+
+.arrowiconcc {
+    max-width: 1280px;
+}
+
+.helpiconcc {
+    max-width: 60rem;
+}
+
+.checkdivcc {
+    flex-direction: column;
+    color: gray;
+    font-weight: 500;
+    background-color: white 0.5;
+    display: flex;
+}
+
+.logoimgcheckcc {
+    max-width: 64px;
+}
+
+.checkparacc {
+    font-size: large;
+    font-weight: 500;
+    color: white;
+}
+
+.divonechatareacc {
+    flex: 1;
+    /* flex-direction: column; */
+    overflow-y: auto;
+    /* height: calc(100% - 120px); */
+}
+
+.divtwomsgcc {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.dictwocheckmsgcc {
+    flex-direction: row-reverse;
+}
+
+.imgchatareacc {
+    max-width: 230px;
+    border-color: gray;
+    border-width: 1;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.parachatareacc {
+    color: white;
+    background-color: violet 0.5;
+    font-weight: lighter;
+    max-width: 200px;
+    background-color: rgba(238, 130, 238, 0.3);
+    /* violet */
+    word-break: break-all;
+}
+
+.paracheckchatareacc {
+    border-bottom-right-radius: 0;
+}
+
+.parachchatareacc {
+    border-bottom-left-radius: 0;
+}
+
+.icononmsgchatareacc {
+    width: 35px;
+}
+
+.timeparachatareacc {
+    color: gray;
+    font-weight: 500;
+}
+
+.divoneBA {
+    display: flex;
+    align-items: center;
+}
+
+.galleryicon {
+
+    margin-right: 10px;
+
+    width: 15px;
+    cursor: pointer;
+}
+
+.sendbutton {
+    width: 35px;
+    cursor: pointer;
+}
+
+.inputmsgBA {
+    /* display: flex; An <input> should never be a flex container unless you’re doing something very exo */
+    flex: 1 1 0%;
+    font-size: small;
+    padding: 0.75rem;
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+}
+
+.inputmsgBA::placeholder {
+    color: #9ca3af;
+    /* tailwing-gray-400*/
+    opacity: 1;
+    /* firefox*/
+}
+
+.divtwoBA {
+    display: flex;
+    align-items: center;
+    background-color: rgb(243, 244, 246, 0.12);
+}
+
+.profilepicRSB {
+    width: 70px;
+    aspect-ratio: 1/1;
+
+}
+
+.parafullnameRSB {
+    /* margin-top: 0; */
+
+    background-color: rgba(17, 144, 74, 0.13);
+    font-size: 0.9rem;
+    /* white-space: nowrap; */
+}
+
+.divoneRSB {
+    background-color: rgba(129, 133, 130, 0.1);
+    backdrop-filter: blur(20px);
+    color: white;
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.spanbioRSB {
+    font-size: 12px;
+}
+
+.divonemediaRSB {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.divtwomediaRSB {
+    margin-top: 0.5rem;
+    max-height: 200px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    opacity: 0.8;
+    width: 100%;
+}
+
+.divthreeimagesRSB {
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden
+}
+
+.divthreeimagesRSB img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.btnlogoutRSB {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(to right, #6243be, #2898c7);
+    color: white;
+    border: none;
+    font-size: medium;
+    font-weight: lighter;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.divoneLP {
+    height: auto;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 250px;
+    backdrop-filter: blur(10px);
+
+}
+
+.logobigLP {
+    width: min(30vh, 250px);
+}
+
+.formLP {
+    border: 2px solid;
+    background-color: rgba(50, 50, 52, 0.226);
+    color: white;
+    border-color: gray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 0.5rem;
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, .1) 0 4px 6px -4px rgba(0, 0, 0, .1);
+}
+
+.currstateLP {
+    font-weight: 500;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.arrowiconLP {
+    width: 1rem;
+    cursor: pointer;
+}
+
+.inputonsubmitLP {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: white;
+}
+
+.inputonsubmitLP::placeholder {
+    color: rgb(232, 230, 230);
+    font-weight: 300;
+}
+
+.inputonsubmitLP:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.6);
+}
+
+.buttonLP {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background: linear-gradient(to right, #cb52c5, #7822b6);
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.checkboxdivLP {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+    color: rgb(124, 123, 123);
+}
+
+.declarationdivLP {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.declaredparaLP {
+    font-size: small;
+    color: #a5a4a4de;
+}
+
+.declaredspanLP {
+    font-size: medium;
+    color: #7822b6;
+    cursor: pointer;
+}
+
+.divonePP {
+    height: auto;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divtwoPP {
+    width: 83.33333%;
+    max-width: 670px;
+    backdrop-filter: blur(20px);
+    color: #b0afaf;
+    border: 2px solid rgb(155, 154, 154);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+
+.formtagPP {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    flex: 1 1 0%;
+}
+
+.labelonePP {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profilepicLP {
+    width: 3rem;
+    height: 3rem;
+}
+
+.logoiconPP {
+    max-width: 180px;
+    aspect-ratio: square;
+    margin-left: 10px;
+    margin-right: 20px;
+}
