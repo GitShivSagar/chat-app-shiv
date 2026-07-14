@@ -97,7 +97,7 @@ class MessageController {
             })
 
             //emit the new message to receiver's socket
-            const receiverSocketId = userSocketMap(receiverId)
+            const receiverSocketId = userSocketMap[receiverId]
             if (receiverSocketId) {
                 io.to(receiverSocketId).emit("new message", newMessage)
             }

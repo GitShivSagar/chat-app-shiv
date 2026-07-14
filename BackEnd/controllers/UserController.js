@@ -51,31 +51,33 @@ class UserController {
             console.log(error.message)
             res.json({
                 success: false,
-                msg: error.message
+                msg: "Something went wrong. Please try again."
             })
         }
     }
 
     static login = async (req, res) => {
         const { email, password } = req.body
-        console.log("User data", req.body)
 
         try {
             const userdata = await UserModal.findOne({ email })
+
+            if (!userdata) {
+                return res.json({ success: false, msg: "Invalid email or password" })
+            }
+
             const ispasswordCorrect = await bcrypt.compare(password, userdata.password)
 
             if (!ispasswordCorrect) {
-                res.json({ success: false, msg: "Invalid Credentials" })
+                return res.json({ success: false, msg: "Invalid email or password" })
             }
 
             const token = generateToken(userdata._id)
-
             res.json({ success: true, userdata, token, msg: "Login Successfully" })
-
 
         } catch (error) {
             console.log(error.message)
-            res.json({ success: false, msg: error.message })
+            res.json({ success: false, msg: "Something went wrong. Please try again." })
         }
     }
 
@@ -106,11 +108,9 @@ class UserController {
             res.json({ success: true, userdata: updatedUser })
         } catch (error) {
             console.log(error.message)
-            res.json({ success: false, message: error.message })
-
+            res.json({ success: false, message: "Something went wrong. Please try again." })
         }
     }
 }
-
 
 export default UserController

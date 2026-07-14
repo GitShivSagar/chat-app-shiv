@@ -4,24 +4,12 @@ import formatmsgtime from '../utils/utilities';
 import { useAuth } from '../../context/AuthContext';
 
 const ChatContainer = () => {
-    const { authUsers, socket, messages, setMessages, selectedUser, setSelectedUser, sendMessage } = useAuth();
+    const { authUsers, messages, setMessages, selectedUser, setSelectedUser, sendMessage } = useAuth();
     const scrollEnd = useRef();
     const imgInputRef = useRef();
 
     const [msgText, setMsgText] = useState("");
     const [selectedImg, setSelectedImg] = useState(null);
-
-    // listen for real-time incoming messages
-    useEffect(() => {
-        if (!socket || !selectedUser) return;
-        const handleNewMessage = (newMsg) => {
-            if (newMsg.senderId === selectedUser._id) {
-                setMessages((prev) => [...prev, newMsg]);
-            }
-        };
-        socket.on("new message", handleNewMessage);
-        return () => socket.off("new message", handleNewMessage);
-    }, [socket, selectedUser]);
 
     // auto scroll to bottom on new message
     useEffect(() => {

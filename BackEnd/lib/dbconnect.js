@@ -1,15 +1,18 @@
 import mongoose from "mongoose";
 
-// function to connect to mongodb databse
-
-const connectDB=async()=>{
+const connectDB = async () => {
     try {
+        mongoose.connection.on('connected', () => console.log("Database connected"))
+        mongoose.connection.on('error', (err) => console.log("MongoDB error:", err.message))
+        mongoose.connection.on('disconnected', () => console.log("MongoDB disconnected"))
 
-        mongoose.connection.on('connected',()=>console.log("Database connected"))
-
-        await mongoose.connect(`${process.env.MONGODB_URI}/chat-app`)
+        await mongoose.connect(`${process.env.MONGODB_URI}/chat-app`, {
+            serverSelectionTimeoutMS: 10000,
+            socketTimeoutMS: 45000,
+        })
     } catch (error) {
-        console.log(error)
+        console.log("DB Connection failed:", error.message)
+        process.exit(1)
     }
 }
 

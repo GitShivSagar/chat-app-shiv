@@ -329,10 +329,9 @@ justify-content: flex-end;
 }
 
 .galleryicon {
-
+    background-color: black;
     margin-right: 10px;
-
-    width: 15px;
+    width: 20px;
     cursor: pointer;
 }
 
@@ -344,16 +343,16 @@ justify-content: flex-end;
 .inputmsgBA {
     /* display: flex; An <input> should never be a flex container unless you’re doing something very exo */
     flex: 1 1 0%;
-    font-size: small;
+    font-size: large;
     padding: 0.75rem;
     border: none;
     outline: none;
-    color: white;
+    color: rgb(24, 24, 24);
     background: transparent;
 }
 
 .inputmsgBA::placeholder {
-    color: #9ca3af;
+    color: #a444d8;
     /* tailwing-gray-400*/
     opacity: 1;
     /* firefox*/

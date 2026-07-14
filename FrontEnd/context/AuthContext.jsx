@@ -19,7 +19,12 @@ export const AuthProvider = ({ children }) => {
     const [unseenMessages, setUnseenMessages] = useState({});
     const [selectedUser, setSelectedUser] = useState(null);
 
-    const socketRef = useRef(null);
+    const selectedUserRef = useRef(null);
+
+    // keep selectedUserRef always pointing to latest selectedUser
+    useEffect(() => {
+        selectedUserRef.current = selectedUser;
+    }, [selectedUser]);
 
     // set token header synchronously at module level whenever token changes
     useEffect(() => {
@@ -32,6 +37,8 @@ export const AuthProvider = ({ children }) => {
         }
     }, [token]);
 
+    const socketRef = useRef(null);
+
     const connectSocket = (userId) => {
         // disconnect existing socket before creating a new one
         if (socketRef.current) {
@@ -39,6 +46,16 @@ export const AuthProvider = ({ children }) => {
         }
         const newSocket = io(backendURL, { query: { userId } });
         newSocket.on("getOnlineUsers", (users) => setOnlineUsers(users));
+        newSocket.on("new message", (newMsg) => {
+            const current = selectedUserRef.current;
+            if (!current) return;
+            if (newMsg.senderId === current._id || newMsg.receiverId === current._id) {
+                setMessages((prev) => {
+                    if (prev.some((m) => m._id === newMsg._id)) return prev;
+                    return [...prev, newMsg];
+                });
+            }
+        });
         socketRef.current = newSocket;
         setSocket(newSocket);
     };
@@ -51,7 +68,7 @@ export const AuthProvider = ({ children }) => {
                 connectSocket(data.userdata._id);
             }
         } catch (error) {
-            toast.error(error.message);
+            console.error(error.message);
         }
     };
 
@@ -126,7 +143,7 @@ export const AuthProvider = ({ children }) => {
                 return false;
             }
         } catch (error) {
-            toast.error(error.message);
+            toast.error("Login failed. Please try again.");
             return false;
         }
     };
@@ -147,7 +164,7 @@ export const AuthProvider = ({ children }) => {
                 return false;
             }
         } catch (error) {
-            toast.error(error.message);
+            toast.error("Signup failed. Please try again.");
             return false;
         }
     };
@@ -181,7 +198,7 @@ export const AuthProvider = ({ children }) => {
                 return false;
             }
         } catch (error) {
-            toast.error(error.message);
+            toast.error("Failed to update profile. Please try again.");
             return false;
         }
     };
