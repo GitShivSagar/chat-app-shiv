@@ -1,23 +1,31 @@
-import React from 'react'
-import {Routes,Route } from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-import LoginPage from '../pages/LoginPage'
-import ProfilePage from '../pages/ProfilePage'
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import LoginPage from '../pages/LoginPage';
+import ProfilePage from '../pages/ProfilePage';
+import { useAuth } from '../../context/AuthContext';
 
 const Routing = () => {
-  return (
-    <div>
-      
-        <Routes>
-            <Route path='/' element={<HomePage/>}></Route>
-            <Route path='/loginpage' element={<LoginPage/>}></Route>
-            <Route path='/profilepage' element={<ProfilePage/>}></Route>
-            {/* <Route path='/login' element={<LoginPage/>}></Route> */}
-        </Routes>
-      
-    </div>
-  )
-}
+    const { authUsers } = useAuth();
 
-export default Routing
+    return (
+        <div>
+            <Routes>
+                <Route
+                    path='/'
+                    element={authUsers ? <HomePage /> : <Navigate to='/loginpage' />}
+                />
+                <Route
+                    path='/loginpage'
+                    element={!authUsers ? <LoginPage /> : <Navigate to='/' />}
+                />
+                <Route
+                    path='/profilepage'
+                    element={authUsers ? <ProfilePage /> : <Navigate to='/loginpage' />}
+                />
+            </Routes>
+        </div>
+    );
+};
 
+export default Routing;

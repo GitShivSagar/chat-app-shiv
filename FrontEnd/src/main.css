@@ -7,8 +7,9 @@
     }
 
     .divoneLP {
-        justify-content: space-evenly;
-        flex-direction: column;
+        justify-content: center;
+        flex-direction: row;
+        gap: 60px;
     }
 
     .divsevensidebar {
@@ -28,13 +29,14 @@
     .homefirstdiv {
         display: flex;
         justify-content: center;
-        /* align-items: center; */
+        align-items: center;
         height: 100vh;
     }
 
     .homeseconddiv {
         display: grid;
         max-width: 900px;
+        width: 100%;
         height: 90vh;
         border-radius: 1rem;
         align-items: stretch;
@@ -54,20 +56,13 @@
         display: block;
     }
 
-
     .checkdivcc {
         display: flex;
     }
 
-    .divoneBA{
-        position: absolute;
-    }
-
-
     .divonesidebar {
         display: block;
     }
-
 
     ::-webkit-scrollbar {
         display: none;
